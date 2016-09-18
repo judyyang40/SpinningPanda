@@ -1,0 +1,9 @@
+Weekly Commit
+
+This week we talked about activity selection.
+
+We put forth 5 activity: Finite State Automata, Searching Algorithms, Sorting Algorithms, Divide and Conquer, Minimal Spanning Trees.
+
+Then we went into details of implementation for all of the five activities, just to see which one is more interesting and easy to realise.
+
+Next day we had a face-to-face meeting and decided that Finite State Automata will be our activity. We also assigned the XP core value to each of the team members. Mine is Simplicity.
