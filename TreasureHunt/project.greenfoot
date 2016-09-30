@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Sep 29 22:19:54 PDT 2016
+#Thu Sep 29 23:27:58 PDT 2016
 target4.type=ClassTarget
 dependency3.from=ShipwreckBay
 target3.height=50
@@ -13,8 +13,8 @@ target4.typeParameters=
 class.Location.superclass=
 readme.width=47
 class.ShipwreckBay.image=Shipwreck_bay.JPG
-class.MutineersIsland.superclass=Island
 editor.fx.0.width=700
+class.MutineersIsland.superclass=Island
 class.PiratesIsland.image=Pirates_island.JPG
 target1.height=50
 target5.type=ClassTarget

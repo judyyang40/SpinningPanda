@@ -9,7 +9,7 @@ public interface IIsland
 {
     public void goToA();
     public void goToB();
-    public int getLocationX();
-    public int getLocationY();
+    // public int getLocationX();
+    // public int getLocationY();
     public String getName();
 }
