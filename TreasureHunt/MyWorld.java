@@ -26,7 +26,12 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        addObject( new ShipwreckBay(), 100, 100 );
-        addObject( new DeadMansIsland(), 400, 100 );
+        addObject( new ShipwreckBay(), 150, 100 );
+        addObject( new DeadMansIsland(), 450, 100 );
+        addObject( new PiratesIsland(), 185, 330 );
+        addObject( new MusketHill(), 350, 580 );
+        addObject( new MutineersIsland(), 550, 410 );
+        addObject( new SmugglersCove(), 800, 305 );
+        addObject( new TreasureIsland(), 800, 100);
     }
 }

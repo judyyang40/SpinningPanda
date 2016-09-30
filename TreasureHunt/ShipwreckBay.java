@@ -11,7 +11,7 @@ public class ShipwreckBay extends Island implements IIsland
     private boolean hasTreasure = false;
     private Island choiceA;
     private Island choiceB;
-    private Location location = new Location(50, 50);
+    private Location location = new Location(150, 100);
     
     public void goToA() {
     }
@@ -34,6 +34,8 @@ public class ShipwreckBay extends Island implements IIsland
     public void act() 
     {
         // Add your action code here.
+        choiceA = getWorld().getObjects(MusketHill.class).get(0);
         choiceB = getWorld().getObjects(DeadMansIsland.class).get(0);
+        getImage().setTransparency(0);
     }    
 }
