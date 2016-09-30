@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ShipwreckBay
+comment0.text=\n\ \n\ \n\ @author\ Judy\ Yang\n
+comment1.params=
+comment1.target=void\ goToA()
+comment2.params=
+comment2.target=void\ goToB()
+comment3.params=
+comment3.target=int\ getLocationX()
+comment4.params=
+comment4.target=int\ getLocationY()
+comment5.params=
+comment5.target=java.lang.String\ getName()
+comment6.params=
+comment6.target=void\ act()
+numComments=7
