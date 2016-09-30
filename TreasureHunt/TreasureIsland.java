@@ -8,10 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TreasureIsland extends Island implements IIsland
 {
    private String name = "Treasure Island";
-    private boolean hasTreasure = false;
+    private boolean hasTreasure = true;
     private Island choiceA = null;
     private Island choiceB = null;
-    private Location location = new Location(800, 100);
     
     public void goToA() {
     }
@@ -20,11 +19,11 @@ public class TreasureIsland extends Island implements IIsland
     }
     
     public int getLocationX() {
-        return location.getLocationX();
+        return getX();
     }
     
     public int getLocationY() {
-        return location.getLocationY();
+        return getY();
     }
     
     public String getName() {

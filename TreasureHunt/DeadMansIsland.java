@@ -11,7 +11,6 @@ public class DeadMansIsland extends Island implements IIsland
     private boolean hasTreasure = false;
     private Island choiceA = null;
     private Island choiceB;
-    private Location location = new Location(450, 100);
     
     public void goToA() {
     }
@@ -20,11 +19,11 @@ public class DeadMansIsland extends Island implements IIsland
     }
     
     public int getLocationX() {
-        return location.getLocationX();
+        return getX();
     }
     
     public int getLocationY() {
-        return location.getLocationY();
+        return getY();
     }
     
     public String getName() {

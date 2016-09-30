@@ -11,7 +11,6 @@ public class MutineersIsland extends Island implements IIsland
     private boolean hasTreasure = false;
     private Island choiceA;
     private Island choiceB;
-    private Location location = new Location(550, 410);
     
     public void goToA() {
     }
@@ -20,11 +19,11 @@ public class MutineersIsland extends Island implements IIsland
     }
     
     public int getLocationX() {
-        return location.getLocationX();
+        return getX();
     }
     
     public int getLocationY() {
-        return location.getLocationY();
+        return getY();
     }
     
     public String getName() {

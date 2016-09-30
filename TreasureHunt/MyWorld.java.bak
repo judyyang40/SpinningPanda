@@ -16,8 +16,7 @@ public class MyWorld extends World
     SmugglersCove sCove;
     DeadMansIsland dmIsland;
     MusketHill mHill;
-    java.util.Set<Integer> set;
-    Integer[] index;
+    int[] index = new int[7];
     
     public MyWorld()
     {    
@@ -32,6 +31,7 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        
         tIsland = new TreasureIsland();
         sBay = new ShipwreckBay();
         mIsland = new MutineersIsland();
@@ -60,40 +60,17 @@ public class MyWorld extends World
     
     public void generateRIsland()
     {
-       java.util.Random ran = new java.util.Random();
-       set = new java.util.LinkedHashSet<Integer>();
-       while(set.size() < 7){
-           set.add(ran.nextInt(7));
+       index = new int[7];
+       for(int i = 0; i < 7; i++){
+           index[i] = Greenfoot.getRandomNumber(7);
+           for(int j = i; j>=0; j--)
+           {
+               while(index[i]==index[j])
+               {
+                   index[i] = Greenfoot.getRandomNumber(7);
+                }
+            }
         }
-        index = set.toArray(new Integer[set.size()]);
-    }
-    
-    public TreasureIsland getTreasureIsland()
-    {
-        return tIsland;
-    }
-    public ShipwreckBay getShipwreckBay()
-    {
-        return sBay;
-    }
-    public MutineersIsland getMutineersIsland()
-    {
-        return mIsland;
-    }
-    public PiratesIsland getPiratesIsland()
-    {
-        return pIsland;
-    }
-    public SmugglersCove getSmugglersCove()
-    {
-        return sCove;
-    }
-    public DeadMansIsland getDeadMansIsland()
-    {
-        return dmIsland;
-    }
-    public MusketHill getMusketHill()
-    {
-        return mHill;
+        
     }
 }
