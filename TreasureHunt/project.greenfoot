@@ -1,7 +1,5 @@
 #Greenfoot properties
-
-#Mon Oct 03 21:13:54 PDT 2016
-
+#Thu Oct 06 15:00:57 PDT 2016
 target4.type=ClassTarget
 dependency3.from=MyWorld
 target3.height=50
@@ -19,7 +17,7 @@ target5.type=ClassTarget
 target3.typeParameters=
 dependency4.from=DeadMansIsland
 class.IIsland.superclass=
-mainWindow.width=1440
+mainWindow.width=1858
 dependency4.type=UsesDependency
 target2.width=80
 target5.name=DeadMansIsland
@@ -51,12 +49,13 @@ package.numTargets=4
 dependency8.to=DeadMansIsland
 dependency6.type=UsesDependency
 target1.type=InterfaceTarget
-editor.swing.0.width=0
-editor.swing.0.y=23
+editor.swing.0.width=1858
+editor.swing.0.y=-1
 target6.y=70
 target1.typeParameters=
-editor.swing.0.x=0
+editor.swing.0.x=-1
 target6.x=160
+target1.naviview.expanded=true
 target2.height=50
 target5.y=130
 target4.height=50
@@ -72,8 +71,8 @@ target2.type=ClassTarget
 target2.y=70
 target2.x=70
 class.MyWorld.superclass=greenfoot.World
-mainWindow.y=23
-mainWindow.x=0
+mainWindow.y=-1
+mainWindow.x=-1
 target6.typeParameters=
 dependency1.from=Island
 target5.width=130
@@ -93,11 +92,11 @@ dependency2.from=Island
 dependency2.type=UsesDependency
 target5.typeParameters=
 world.lastInstantiated=MyWorld
-mainWindow.height=797
+mainWindow.height=1116
 target2.showInterface=false
-editor.swing.0.height=0
+editor.swing.0.height=1116
 target3.name=MyWorld
 target6.showInterface=false
-project.charset=UTF-8
 target3.width=80
+project.charset=UTF-8
 target4.showInterface=false
