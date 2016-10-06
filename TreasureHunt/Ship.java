@@ -15,11 +15,11 @@ public class Ship extends Actor
     }
     
     public void gotoA(){
-        currentIsland = currIsland.getA();
+        currentIsland = currentIsland.getA();
     }
     
     public void gotoB(){
-        currentIsland = currIsland.getB();
+        currentIsland = currentIsland.getB();
     }
     
     public void moveTo(Island island){
