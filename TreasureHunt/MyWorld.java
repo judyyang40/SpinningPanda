@@ -21,6 +21,10 @@ public class MyWorld extends World
         super(1000, 650, 1); 
         prepare();
     }
+    
+    public Ship getCurrentShip() {
+        return ship;
+    }
 
     /**
      * Prepare the world for the start of the program.
