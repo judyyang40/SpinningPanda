@@ -10,8 +10,9 @@ public class Ship extends Actor
 {
     Island currentIsland;
     
-    public Ship(Island island) {
+    public Ship(Island island, String filename) {
         currentIsland = island;
+        setImage(filename);
     }
     
     public void gotoA(){
