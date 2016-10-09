@@ -21,6 +21,7 @@ public class Ship extends Actor
         setLocation(currentIsland.getX(), currentIsland.getY());
         if(currentIsland.isTreasure()){
             getWorld().removeObject(this);
+        }
     }
     
     public void gotoB(){
@@ -28,6 +29,7 @@ public class Ship extends Actor
         setLocation(currentIsland.getX(), currentIsland.getY());
         if(currentIsland.isTreasure()){
             getWorld().removeObject(this);
+        }
     }
     
     public void moveTo(Island island){
@@ -35,6 +37,7 @@ public class Ship extends Actor
         setLocation(currentIsland.getX(), currentIsland.getY());
         if(currentIsland.isTreasure()){
             getWorld().removeObject(this);
+        }
     }
     
     public void act() 
