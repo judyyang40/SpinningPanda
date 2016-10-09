@@ -39,6 +39,10 @@ public class Island extends Actor
         hasTreasure = true;
     }
     
+    public boolean isTreasure(){ 
+        return hasTreasure;
+    }
+    
     public void act() 
     {
         // Add your action code here.
