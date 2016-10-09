@@ -31,8 +31,7 @@ public class Ship extends Actor
         setLocation(currentIsland.getX(), currentIsland.getY());
     }
     
-    public void act() 
-    {
+    public void act(){
         getImage().setTransparency(0);
     } 
 }
