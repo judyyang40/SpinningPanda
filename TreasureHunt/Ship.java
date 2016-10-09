@@ -26,4 +26,9 @@ public class Ship extends Actor
     public void moveTo(Island island){
         currentIsland = island;
     }
+    
+    public void act() 
+    {
+        getImage().setTransparency(0);
+    } 
 }
