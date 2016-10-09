@@ -21,6 +21,7 @@ public class Ship extends Actor
         setLocation(currentIsland.getX(), currentIsland.getY());
         if(currentIsland.isTreasure()){
             getWorld().removeObject(this);
+            //setImage(String filename);
         }
     }
     
@@ -29,6 +30,7 @@ public class Ship extends Actor
         setLocation(currentIsland.getX(), currentIsland.getY());
         if(currentIsland.isTreasure()){
             getWorld().removeObject(this);
+            //setImage(String filename);
         }
     }
     
@@ -37,6 +39,7 @@ public class Ship extends Actor
         setLocation(currentIsland.getX(), currentIsland.getY());
         if(currentIsland.isTreasure()){
             getWorld().removeObject(this);
+            //setImage(String filename);
         }
     }
     
