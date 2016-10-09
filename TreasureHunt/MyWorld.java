@@ -10,6 +10,8 @@ public class MyWorld extends World
 {
     Island[] islands;
     Ship ship;
+    Button buttonA;
+    Button buttonB;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -66,5 +68,10 @@ public class MyWorld extends World
         islands[n - 1].setTreasure();
         
         ship = new Ship(islands[2]); // All ships start from Pirate's Island
+
+        buttonA = new Button("a", 400, 610);
+        buttonB = new Button("b", 600, 610);
+        addObject(buttonA, 600, 610);
+        addObject(buttonB, 800, 610);
     }
 }

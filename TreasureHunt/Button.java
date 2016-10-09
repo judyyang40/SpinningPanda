@@ -32,12 +32,12 @@ public class Button extends Actor
     {
         if(Greenfoot.mouseClicked(this) && this.name.equals("a"))
         {
-            World world = getWorld();
+            MyWorld world = (MyWorld) getWorld();
             world.getCurrentShip().gotoA();
         }
         if(Greenfoot.mouseClicked(this) && this.name.equals("b"))
         {
-            World world = getWorld();
+            MyWorld world = (MyWorld) getWorld();
             world.getCurrentShip().gotoB();
         }
     }
