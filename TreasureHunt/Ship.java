@@ -33,6 +33,6 @@ public class Ship extends Actor
     
     public void act() 
     {
-        getImage().setTransparency(0);
+        //getImage().setTransparency(0);
     } 
 }

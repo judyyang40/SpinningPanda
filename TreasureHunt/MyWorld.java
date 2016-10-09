@@ -68,6 +68,8 @@ public class MyWorld extends World
         islands[n - 1].setTreasure();
         
         ship = new Ship(islands[2], "ship.JPG"); // All ships start from Pirate's Island
+        
+        addObject(ship, islands[2].getX(), islands[2].getY());
 
         buttonA = new Button("a", 400, 610);
         buttonB = new Button("b", 600, 610);
