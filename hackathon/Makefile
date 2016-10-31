@@ -1,3 +1,4 @@
+CP := "dist/*"
 
 all: clean compile 
 
@@ -10,13 +11,10 @@ app: compile
 	cd build ; jar -cvfe ../dist/app.jar GumballServer .
 
 test: compile app
-	java -cp dist/restlet.jar:dist/restlet-json.jar:dist/json.jar:dist/app.jar api.GumballServer
+	java -cp $(CP):dist/app.jar api.GumballServer
 
 compile: 
-	javac -cp dist/restlet.jar:dist/restlet-json.jar:dist/json.jar:\
-	dist/restlet-jackson.jar:\
-	dist/jackson-core-2.8.3.jar:\
-	dist/jackson-annotations-2.8.3.jar \
+	javac -cp $(CP) \
 	 -d build \
 	src/gumball/*.java \
 	clients/loadtestclient/*.java \
@@ -24,11 +22,11 @@ compile:
 
 run:
 	echo Starting Service at:  http://localhost:8080
-	java -cp build:dist/restlet.jar:dist/restlet-json.jar:dist/json.jar api.GumballServer
+	java -cp build:$(CP) api.GumballServer
 
 loadtest:
 	echo Starting Load Test on localhost
-	java -cp build:dist/restlet.jar:dist/restlet-json.jar:dist/json.jar RunLoadTest 5
+	java -cp build:$(CP) RunLoadTest 5
 
 docker-build: app
 	docker build -t gumball .

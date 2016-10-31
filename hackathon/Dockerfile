@@ -7,4 +7,9 @@ ADD ./dist/json.jar /srv/json.jar
 ADD ./dist/restlet-jackson.jar /srv/rest-jackson.jar
 ADD ./dist/jackson-core-2.8.3.jar /srv/jackson-core-2.8.3.jar
 ADD ./dist/jackson-annotations-2.8.3.jar /srv/jackson-annotations-2.8.3.jar
-CMD java -cp /srv/restlet.jar:/srv/restlet-json.jar:/srv/json.jar:/srv/app.jar:/srv/rest-jackson.jar:/srv/jackson-core-2.8.3.jar:/srv/jackson-annotations-2.8.3.jar api.GumballServer
+ADD ./dist/jackson-databind-2.8.3.jar /srv/jackson-databind-2.8.3.jar
+ADD ./dist/jackson-dataformat-csv-2.8.3.jar /srv/jackson-dataformat-csv-2.8.3.jar
+ADD ./dist/jackson-dataformat-smile-2.8.3.jar /srv/jackson-dataformat-smile-2.8.3.jar
+ADD ./dist/jackson-dataformat-xml-2.8.3.jar /srv/jackson-dataformat-xml-2.8.3.jar
+ADD ./dist/jackson-dataformat-yaml-2.8.3.jar /srv/jackson-dataformat-yaml-2.8.3.jar
+CMD java -cp "/srv/*" api.GumballServer

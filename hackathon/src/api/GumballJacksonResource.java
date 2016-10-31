@@ -18,6 +18,7 @@ public class GumballJacksonResource extends ServerResource {
         gmObject.setCount(machine.getCount());
         gmObject.setState(machine.getStateString());
         return new JacksonRepresentation<GMObject> ( gmObject ) ;
+        // return new JacksonRepresentation<GumballMachine>( machine );
     }
 
 
@@ -27,18 +28,32 @@ public class GumballJacksonResource extends ServerResource {
         JSONObject json = jsonRep.getJsonObject() ;
         String action = json.getString("action") ;
         System.out.println( "action: " + action ) ;
-
-        if ( action.equals( "insert-quarter") )
+        GMObject gmObject = new GMObject();
+        try {
             synchronized(machine) {
-                machine.insertQuarter() ;
-            }
-        if ( action.equals( "turn-crank") )
-            synchronized(machine) {
-                machine.turnCrank();
-            }
+                if ( action.equals( "insert-quarter") ) {
+                    while (!machine.getStateString().equals("waiting for quarter")) {
+                        machine.wait();
+                    }
+                    machine.insertQuarter() ;
+                    machine.notifyAll();
+                }
+                if ( action.equals( "turn-crank") ) {
+                    while (!machine.getStateString().equals("waiting for turn of crank")) {
+                        machine.wait();
+                    }
+                    machine.turnCrank();
+                    machine.notifyAll();
+                }
 
-        return new JacksonRepresentation<GumballMachine> ( machine ) ;
+                gmObject.setBanner(machine.toString());
+                gmObject.setCount(machine.getCount());
+                gmObject.setState(machine.getStateString());
+            }
+        } catch (Exception e) {
 
+        }
+        return new JacksonRepresentation<GMObject> ( gmObject ) ;
     }
 }
 
