@@ -1,1 +1,19 @@
+Use Case Name	Play Treasure Hunt Game
+Related Requirements	The Treasure Hunt Game shall allow a player to start the game, play the game, and obtain a score. 
+Goal In Context	A player plays the game and earns a score.
+Preconditions	The game allows multiple players to play. 
+Successful End Condition	Player makes the ship get to the treasure island in shortest time and earn a score. 
+Failed End Condition	Player does not make the ship get to the treasure island.
+Primary Actors	Player.
+Secondary Actors	Game.
+Trigger	The Player connects to the game and start the game. 
+Main Flow	Step	Action
+	1	The Player requests to connect to the game.
+	2	The Player waits for other players to start the game. 
+	3	The Player plays the game by selecting the next island. 
+	4	The Player allows the ship to get to the Treasure Island in shortest time.
+	5	The player gets a score. 
+Extensions	Step	Branching Action
+	4.1	The Player does not allow the ship to get to the Treasure Island.
+	4.2	The game terminates. 
 
