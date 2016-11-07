@@ -12,9 +12,12 @@ Main Flow	          Step	Action
 	                   1	The Player requests to connect to the game.
 	                   2	The Player waits for other players to start the game. 
 	                   3	The Player plays the game by selecting the next island. 
-	                   4	The Player allows the ship to get to the Treasure Island in shortest time.
-	                   5	The player gets a score. 
+	                   4	The Player arrives at Treasure Island faster than the other players.
+	                   5	The Player receives notice from the screen that he/she has won the game. 
 Extensions	         Step	Branching Action
-	                  4.1	The Player does not allow the ship to get to the Treasure Island.
-	                  4.2	The game terminates. 
+	                  4a.1	The Player does not make a move for longer than 10 seconds.
+	                  4a.2	The Player’s game is terminated by the server. 
+Sub-variations		 Step	Branching Action
+			  4b.1	Another Player makes it to Treasure Island first.
+			  4b.2	The Player receives notice from the screen that he/she has lost against another player.
 
