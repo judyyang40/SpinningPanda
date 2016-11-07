@@ -1,6 +1,6 @@
 - New player joining
 
-    *request:
+    * request:
     ```
     {
         "action": "join",
@@ -8,7 +8,7 @@
     }
     
     ```
-    *response:
+    * response:
     ```
     {
         "id": player_id;
@@ -17,7 +17,7 @@
 
 - Player ready
 
-    *requst:
+    * requst:
     ```
     {
         "action": "ready",
@@ -25,7 +25,7 @@
     }
     ```
     
-    *response:
+    * response:
     ```
     {
         "running": true|false
@@ -34,7 +34,7 @@
 
 - Player moves
 
-    *request:
+    * request:
     ```
     {
         "action": "move",
@@ -42,7 +42,7 @@
     }
 
     ```
-    *response:
+    * response:
     ```
     {
         "running": true|false
@@ -51,14 +51,14 @@
 
 - Player finishes
 
-    *request:
+    * request:
     ```
     {
         "action": "finish"
     }
     ```
 
-    *response:
+    * response:
     ```
     {
         "running": true|false;
@@ -67,14 +67,14 @@
 
 - Player queries progress
 
-    *request:
+    * request:
     ```
     {
         "action": "query"
     }
     ```
 
-    *response:
+    * response:
     ```
     {
         "running": true|false,
