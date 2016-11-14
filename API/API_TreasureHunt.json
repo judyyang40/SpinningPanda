@@ -27,8 +27,9 @@
                                     "type": "string",
                                     "description": "wait, ready or refuse"
                                 },
-                                "your_player_number": {
-                                    "type": "number"
+                                "you": {
+                                    "type": "number",
+                                    "description": "your_player_number"
                                 },
                                 "total": {
                                     "type": "number",
