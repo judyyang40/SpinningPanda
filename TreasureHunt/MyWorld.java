@@ -12,6 +12,7 @@ public class MyWorld extends World
     Ship ship;
     Button buttonA;
     Button buttonB;
+    Button buttonReady;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -73,7 +74,9 @@ public class MyWorld extends World
 
         buttonA = new Button("a", 400, 610);
         buttonB = new Button("b", 600, 610);
+        buttonReady = new Button("ready", 320, 280);
         addObject(buttonA, 600, 610);
         addObject(buttonB, 800, 610);
+        addObject(buttonReady, 520, 280);
     }
 }

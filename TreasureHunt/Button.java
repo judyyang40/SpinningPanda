@@ -20,10 +20,12 @@ public class Button extends Actor
         if(this.name.equals("a"))
         {
             setImage("button_a1.jpg");
-        }else
+        }else if(this.name.equals("b"))
         {
             setImage("button_b1.jpg");
         }
+        else
+            setImage("button_ready.png");
         this.x = _x;
         this.y = _y;
     }
@@ -39,6 +41,11 @@ public class Button extends Actor
         {
             MyWorld world = (MyWorld) getWorld();
             world.getCurrentShip().gotoB();
+        }
+        if(Greenfoot.mouseClicked(this) && this.name.equals("ready"))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            world.removeObject(this);
         }
     }
     public void act() 
