@@ -1,0 +1,89 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "TreasureHunt API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/join": {
+            "post": {
+                "description": "Players make request for joining the game.\n",
+                "parameters": [
+                    {
+                        "name": "mac",
+                        "in": "query",
+                        "description": "The MAC address of the player. In the xx-xx-xx-xx-xx-xx format.\n",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "response message.",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "description": "wait, ready or refuse"
+                                },
+                                "your_player_number": {
+                                    "type": "number"
+                                },
+                                "total": {
+                                    "type": "number",
+                                    "description": "total number of ready players.\n"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/update": {
+            "post": {
+                "description": "Players update their locations and get others' locations as well.\n",
+                "parameters": [
+                    {
+                        "name": "mac",
+                        "in": "query",
+                        "description": "The MAC address of the player. In the xx-xx-xx-xx-xx-xx format.\n",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "location",
+                        "in": "query",
+                        "description": "the name of the island.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "response message",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "finish": {
+                                    "type": "boolean"
+                                },
+                                "winner": {
+                                    "type": "number",
+                                    "description": "the winner's player number, null if finish is false\n"
+                                },
+                                "location": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "the location of each players, for example, [\"xxx\", \"yyy\", \"xxx\", \"zzz\"] indicates that the player 1 is on the xxx island, null if finish is true.\n"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
