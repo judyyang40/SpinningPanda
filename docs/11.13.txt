@@ -1,0 +1,17 @@
+       http://localhost:3000/join
+       
+       POST
+       req: { "mac": "xx-xx-xx-xx-xx-xx"}
+       res: {"status": "wait", 
+		"you": "playerX",
+		"other" : ["player1", "player2", "player3"]}
+       res: {"status": "ready"}
+       res: {"status": "refuse"}
+
+       http://localhost:3000/update
+       req: {"mac": "xx-xx-xx-xx-xx-xx",
+             "location" : "islandxxxx"};
+       res: {"finish": true, "winner": "playerx"}
+       res: {"finish": false, "location": [];}
+
+       
