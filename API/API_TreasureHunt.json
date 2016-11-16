@@ -66,6 +66,10 @@
                         "schema": {
                             "type": "object",
                             "properties": {
+                                "err": {
+                                    "type": "string",
+                                    "description": "type_err when receive a update message in wait state, \nerr_err when receive a unknown mac address, \notherwise null\n"
+                                },
                                 "finish": {
                                     "type": "boolean"
                                 },
