@@ -22,7 +22,6 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 650, 1); 
         prepare();
     }
@@ -74,11 +73,11 @@ public class MyWorld extends World
         
         addObject(ship, islands[2].getX(), islands[2].getY());
 
-        buttonA = new Button("a", 400, 610);
-        buttonB = new Button("b", 600, 610);
+        buttonA = new Button("a", 750, 610);
+        buttonB = new Button("b", 920, 610);
         buttonReady = new Button("ready", 320, 280);
-        addObject(buttonA, 600, 610);
-        addObject(buttonB, 800, 610);
+        addObject(buttonA, 750, 610);
+        addObject(buttonB, 920, 610);
         addObject(buttonReady, 520, 280);
         
        states[0] = new State("Init");
@@ -87,11 +86,12 @@ public class MyWorld extends World
        states[3] = new State("Finished");
        currentState = states[0];
     }
+    
     public State getState() {
         return currentState;
     }
+    
     public void setState(int index) {
-        System.out.println("in setState");
         currentState = states[index];
     }
 }
