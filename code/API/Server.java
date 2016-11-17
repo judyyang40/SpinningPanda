@@ -13,7 +13,7 @@ public class Server {
 	
 	private State state;
 
-	public static final int player_max_num = 4; 
+	public static final int player_max_num = 5; 
 	public static final String initIsland = "Pirates’ Island";
 	public static final String treaIsland = "Treasure Island";
 	private JSONObject[] player;
