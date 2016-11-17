@@ -13,6 +13,8 @@ public class MyWorld extends World
     Button buttonA;
     Button buttonB;
     Button buttonReady;
+    State[] states = new State[4];
+    State currentState;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -78,5 +80,18 @@ public class MyWorld extends World
         addObject(buttonA, 600, 610);
         addObject(buttonB, 800, 610);
         addObject(buttonReady, 520, 280);
+        
+       states[0] = new State("Init");
+       states[1] = new State("Ready");
+       states[2] = new State("Playing");
+       states[3] = new State("Finished");
+       currentState = states[0];
+    }
+    public State getState() {
+        return currentState;
+    }
+    public void setState(int index) {
+        System.out.println("in setState");
+        currentState = states[index];
     }
 }

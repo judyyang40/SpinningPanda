@@ -42,8 +42,11 @@ public class Button extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.getCurrentShip().gotoB();
         }
-        if(Greenfoot.mouseClicked(this) && this.name.equals("ready"))
+        if(Greenfoot.mouseClicked(this) && this.name.equals("ready") && ((MyWorld)getWorld()).getState().name.equals("Init"))
         {
+            System.out.println(((MyWorld)getWorld()).getState().name);
+            ((MyWorld)getWorld()).setState(1);
+            System.out.println(((MyWorld)getWorld()).getState().name);
             MyWorld world = (MyWorld) getWorld();
             world.removeObject(this);
         }
