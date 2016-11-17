@@ -22,6 +22,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 650, 1); 
         prepare();
     }
@@ -73,25 +74,42 @@ public class MyWorld extends World
         
         addObject(ship, islands[2].getX(), islands[2].getY());
 
-        buttonA = new Button("a", 750, 610);
-        buttonB = new Button("b", 920, 610);
+        buttonA = new Button("a", 400, 610);
+        buttonB = new Button("b", 600, 610);
         buttonReady = new Button("ready", 320, 280);
-        addObject(buttonA, 750, 610);
-        addObject(buttonB, 920, 610);
+        addObject(buttonA, 600, 610);
+        addObject(buttonB, 800, 610);
         addObject(buttonReady, 520, 280);
         
        states[0] = new State("Init");
        states[1] = new State("Ready");
        states[2] = new State("Playing");
        states[3] = new State("Finished");
-       currentState = states[0];
+       setState(0);
     }
-    
     public State getState() {
         return currentState;
     }
-    
     public void setState(int index) {
         currentState = states[index];
+        System.out.println("Set Current State to " + currentState.getStateName());
+    }
+    
+    public void win() {
+        ship.setImage("Treasure.png");
+        Greenfoot.delay(80);
+        Button buttonWin = new Button("win", 320, 280);
+        addObject(buttonWin, 520, 280);
+        Greenfoot.delay(80);
+        Button buttonGameOver = new Button("gameover", 320, 280);
+        addObject(buttonGameOver, 520, 280);
+    }
+    
+    public void fail() {
+        Button buttonFail = new Button("fail", 320, 280);
+        addObject(buttonFail, 520, 280);
+        Greenfoot.delay(80);
+        Button buttonGameOver = new Button("gameover", 320, 280);
+       addObject(buttonGameOver, 520, 280);
     }
 }
