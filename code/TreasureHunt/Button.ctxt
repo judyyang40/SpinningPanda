@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Button
-comment0.text=\r\n\ Button\ class\r\n\ \r\n\ @Qi\ Li\r\n\ @1.0\r\n
+comment0.text=\n\ Button\ class\n\ \n\ @Qi\ Li\n\ @1.0\n
 comment1.params=_name\ _x\ _y
 comment1.target=Button(java.lang.String,\ int,\ int)
 comment2.params=

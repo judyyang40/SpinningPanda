@@ -74,11 +74,11 @@ public class MyWorld extends World
         
         addObject(ship, islands[2].getX(), islands[2].getY());
 
-        buttonA = new Button("a", 400, 610);
-        buttonB = new Button("b", 600, 610);
+        buttonA = new Button("a", 750, 610);
+        buttonB = new Button("b", 920, 610);
         buttonReady = new Button("ready", 320, 280);
-        addObject(buttonA, 600, 610);
-        addObject(buttonB, 800, 610);
+        addObject(buttonA, 750, 610);
+        addObject(buttonB, 920, 610);
         addObject(buttonReady, 520, 280);
         
        states[0] = new State("Init");
