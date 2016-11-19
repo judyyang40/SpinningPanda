@@ -96,6 +96,8 @@ public class MyWorld extends World
     }
     
     public void win() {
+        removeObject(buttonA);
+        removeObject(buttonB);
         ship.setImage("Treasure.png");
         Greenfoot.delay(80);
         Button buttonWin = new Button("win", 320, 280);
@@ -106,6 +108,8 @@ public class MyWorld extends World
     }
     
     public void fail() {
+        removeObject(buttonA);
+        removeObject(buttonB);
         Button buttonFail = new Button("fail", 320, 280);
         addObject(buttonFail, 520, 280);
         Greenfoot.delay(80);
