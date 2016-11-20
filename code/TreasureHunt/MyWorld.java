@@ -56,7 +56,7 @@ public class MyWorld extends World
         int[] destA = new int[]{3, 3, 0, 2, 5, 2, -1};
         int[] destB = new int[]{1, 0, 3, 4, 1, 6, -1};
         int[] x = new int[]{150, 450, 185, 350, 550, 800, 800};
-        int[] y = new int[]{100, 100, 330, 580, 410, 305, 100};
+        int[] y = new int[]{100, 100, 330, 580, 380, 305, 100};
         
         islands = new Island[7];
         final int n = 7;
