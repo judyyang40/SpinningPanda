@@ -15,6 +15,8 @@ public class MyWorld extends World
     Button buttonReady;
     State[] states = new State[4];
     State currentState;
+    String num = -1;
+    ScoreBoard score;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -77,6 +79,8 @@ public class MyWorld extends World
         buttonA = new Button("a", 750, 610);
         buttonB = new Button("b", 920, 610);
         buttonReady = new Button("ready", 320, 280);
+        score = new ScoreBoard();
+        addObject(score, 750, 550);
         addObject(buttonA, 750, 610);
         addObject(buttonB, 920, 610);
         addObject(buttonReady, 520, 280);
@@ -115,5 +119,19 @@ public class MyWorld extends World
         Greenfoot.delay(80);
         Button buttonGameOver = new Button("gameover", 320, 280);
        addObject(buttonGameOver, 520, 280);
+    }
+
+    public setNum (String _num)
+    {
+        this.num = _num;
+    }
+
+    public String getNum()
+    {
+        return this.num;
+    }
+    public ScoreBoard getScoreboard()
+    {
+        return score;
     }
 }

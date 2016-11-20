@@ -102,6 +102,7 @@ public class Button extends Actor
                     ((MyWorld)getWorld()).addObject(waitmsg, 800, 545);
                     Actor playermsg = new Actor(){};
                     playermsg.setImage(new GreenfootImage("Player" + msg.get("you").toString(), 40, java.awt.Color.BLACK, java.awt.Color.WHITE));
+                    ((MyWorld)getWorld()).setNum(msg.get("you").toString());
                     ((MyWorld)getWorld()).addObject(playermsg, 600, 610);
                 }
                 else if(msg.get("status").equals("ready")) {
