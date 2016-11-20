@@ -42,6 +42,10 @@ public class Ship extends Actor
            //((MyWorld)getWorld()).win();
         }
     }
+    public Island getCurrentIsland()
+    {
+        return currentIsland;
+    }
     
     public void act() 
     {
