@@ -27,24 +27,24 @@ loadtest:
 	java -cp build:$(CP) RunLoadTest 5
 
 docker-build: app
-	docker build -t gumball .
+	docker build -t island .
 	docker images
 
 docker-clean:
-	docker stop gumball
-	docker rm gumball
-	docker rmi gumball
+	docker stop island
+	docker rm island
+	docker rmi island
 
 docker-run:
-	docker run --name gumball -td gumball
+	docker run --name island -td island
 	docker ps
 
 docker-run-host:
-	docker run --name gumball -td --net=host gumball
+	docker run --name island -td --net=host island
 	docker ps
 
 docker-run-bridge:
-	docker run --name gumball -td -p 80:8080 gumball
+	docker run --name island -td -p 80:8080 island
 	docker ps
 
 docker-network:
@@ -52,9 +52,9 @@ docker-network:
 	docker network inspect bridge
 
 docker-stop:
-	docker stop gumball
-	docker rm gumball
+	docker stop island
+	docker rm island
 
 docker-shell:
-	docker exec -it gumball bash 
+	docker exec -it island bash 
 	
