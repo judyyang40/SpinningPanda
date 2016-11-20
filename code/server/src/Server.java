@@ -20,14 +20,17 @@ public class Server {
 	private int player_num;     //the number of players
 	private int winner_No;
 	
-	public Server()
+	private static Server serverInstance = null;
+	
+	public static synchronized Server getInstance() {
+		if (serverInstance == null) {
+			serverInstance = new Server();
+		}
+		return serverInstance;
+	}
+
+	private Server()
 	{
-		this.player =  new JSONObject[player_max_num];
-		this.waitState = new WaitState("Wait State", this);
-		this.playState = new PlayState("Play State", this);
-		this.finishState = new FinishState("Finish State", this);
-		init();
-		setState(waitState);
 	}
 	
 	public void init()
@@ -36,6 +39,13 @@ public class Server {
 		this.player_num = 0;
 		this.winner_No = 0;
 
+		this.player =  new JSONObject[player_max_num];
+		Server.getInstance();
+		this.waitState = new WaitState("Wait State", serverInstance);
+		this.playState = new PlayState("Play State", serverInstance);
+		this.finishState = new FinishState("Finish State", serverInstance);
+		setState(waitState);
+		
 		for (i = 0; i < player_max_num; i++)
 		{
 			this.player[i] = new JSONObject();
@@ -86,8 +96,8 @@ public class Server {
 	    
 	    for (i = 0; i < player_max_num; i++)
 	    {
-	    	if (mac == player[i].get("mac")) { return i + 1; }
-	    	if ("" == player[i].get("mac"))
+	    	if (mac.equals(player[i].get("mac"))) { return i + 1; }
+	    	if ("".equals(player[i].get("mac")))
 	    	{
 	    		player[i].put("mac", mac);
 	    		player[i].put("location", initIsland);
@@ -105,7 +115,7 @@ public class Server {
 	    
 	    for (i = 0; i < player_num; i++)
 	    {
-	    	if (mac == player[i].get("mac"))  { return i + 1;}
+	    	if (mac.equals(player[i].get("mac")))  { return i + 1;}
 	    }
 	    
 	    return -1;

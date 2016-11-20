@@ -27,6 +27,7 @@ public class PlayState implements State {
     	else
     	{
     		res.put("finish", false);
+			res.put("you", player_No);
 			res.put("location", server.getAllLocation());
     	}
     	

@@ -14,7 +14,7 @@ public class ServerTest {
 
 	@Test
 	public void test() {
-		Server server = new Server();
+		Server server = Server.getInstance();
 		JSONObject json = new JSONObject();
 		String[] location;
 		
