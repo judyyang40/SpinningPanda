@@ -19,28 +19,28 @@ public class Ship extends Actor
     public void gotoA(){
         currentIsland = currentIsland.getA();
         setLocation(currentIsland.getX(), currentIsland.getY());
-        if(currentIsland.isTreasure()){
-           ((MyWorld)getWorld()).setState(3);
+        //if(currentIsland.isTreasure()){
+           //((MyWorld)getWorld()).setState(3);
            //((MyWorld)getWorld()).win();
-        }
+        //}
     }
     
     public void gotoB(){
         currentIsland = currentIsland.getB();
         setLocation(currentIsland.getX(), currentIsland.getY());
-        if(currentIsland.isTreasure()){
-           ((MyWorld)getWorld()).setState(3);
+        //if(currentIsland.isTreasure()){
+           //((MyWorld)getWorld()).setState(3);
            //((MyWorld)getWorld()).win();
-        }
+        //}
     }
     
     public void moveTo(Island island){
         currentIsland = island;
         setLocation(currentIsland.getX(), currentIsland.getY());
-        if(currentIsland.isTreasure()){
-           ((MyWorld)getWorld()).setState(3);
+        //if(currentIsland.isTreasure()){
+           //((MyWorld)getWorld()).setState(3);
            //((MyWorld)getWorld()).win();
-        }
+        //}
     }
     public Island getCurrentIsland()
     {
