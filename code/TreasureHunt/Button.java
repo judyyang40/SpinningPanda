@@ -86,14 +86,14 @@ public class Button extends Actor
                 msg.put("status", "wait");
                 msg.put("you", 2);
                 msg.put("total", 4);*/
+                Actor playermsg = new Actor(){};
+                playermsg.setImage(new GreenfootImage("Player" + msg.get("you").toString(), 40, java.awt.Color.BLACK, java.awt.Color.WHITE));
+                ((MyWorld)getWorld()).setNum(msg.get("you").toString());
+                ((MyWorld)getWorld()).addObject(playermsg, 600, 610);
                 
                 if(msg.get("status").equals("wait")) {
                     waitmsg.setImage(new GreenfootImage("Waiting... Number of Players: " + msg.get("total").toString(), 25, java.awt.Color.BLACK, java.awt.Color.WHITE));
                     ((MyWorld)getWorld()).addObject(waitmsg, 800, 545);
-                    Actor playermsg = new Actor(){};
-                    playermsg.setImage(new GreenfootImage("Player" + msg.get("you").toString(), 40, java.awt.Color.BLACK, java.awt.Color.WHITE));
-                    ((MyWorld)getWorld()).setNum(msg.get("you").toString());
-                    ((MyWorld)getWorld()).addObject(playermsg, 600, 610);
                 }
                 else if(msg.get("status").equals("ready")) {
                     ((MyWorld)getWorld()).removeObject(waitmsg);

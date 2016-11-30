@@ -8,6 +8,6 @@ public class WinAction implements Action
     
     public void ExtraAction(Ship s) {
         s.setImage("Treasure.png");
-        Greenfoot.delay(80);
+        Greenfoot.delay(300);
     }
 }

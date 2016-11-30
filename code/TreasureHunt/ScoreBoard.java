@@ -31,11 +31,11 @@ public class ScoreBoard extends Actor
         if(((MyWorld)getWorld()).getState().name.equals("Playing"))
         {
             JSONObject req = new JSONObject();
-            req.put("mac", (mw.getMac());
+            req.put("mac", mw.getMac());
             
             Island curr = mw.getCurrentShip().getCurrentIsland();
             req.put("location", curr.getName());
-            System.out.println(req.toString());
+            //System.out.println(req.toString());
             ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/update");
             Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
             try {
@@ -58,6 +58,7 @@ public class ScoreBoard extends Actor
                 } 
             }else{
                 mw.setState(3);
+                System.out.println(msg.get("winner").toString());
                 if(msg.get("winner").toString().equals(mw.getNum()))
                 {
                     mw.win();
