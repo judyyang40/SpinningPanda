@@ -100,25 +100,13 @@ public class MyWorld extends World
     }
     
     public void win() {
-        removeObject(buttonA);
-        removeObject(buttonB);
-        ship.setImage("Treasure.png");
-        Greenfoot.delay(80);
-        Button buttonWin = new Button("win", 320, 280);
-        addObject(buttonWin, 520, 280);
-        Greenfoot.delay(80);
-        Button buttonGameOver = new Button("gameover", 320, 280);
-        addObject(buttonGameOver, 520, 280);
+        FinalActionCreator action = new WinActionCreator(this);
+        action.exec(buttonA, buttonB);
     }
     
     public void fail() {
-        removeObject(buttonA);
-        removeObject(buttonB);
-        Button buttonFail = new Button("fail", 320, 280);
-        addObject(buttonFail, 520, 280);
-        Greenfoot.delay(80);
-        Button buttonGameOver = new Button("gameover", 320, 280);
-       addObject(buttonGameOver, 520, 280);
+        FinalActionCreator action = new FailActionCeator(this);
+        action.exec(buttonA, buttonB);
     }
 
     public setNum (String _num)
