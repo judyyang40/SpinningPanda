@@ -39,12 +39,11 @@ public class PlayState implements State {
 	{
 		JSONObject res = new JSONObject();
 		int player_No = server.getPlayer(mac);
-		
 		if (-1 == player_No)
 		{
 			res.put("err", "mac_err");
 		}
-		else if (server.treaIsland == location)
+		else if (location.equals(server.treaIsland))
 		{
              server.setWinnerNo(player_No);
              server.setLocation(player_No, location);
