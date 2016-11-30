@@ -4,8 +4,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class FailAction implements Action
-{
+public class FailAction implements Action {
     public String getFinalResult() {
         return "fail";
     }

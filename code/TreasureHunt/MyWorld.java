@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 /**
  * Write a description of class MyWorld here.
@@ -17,6 +19,7 @@ public class MyWorld extends World
     State currentState;
     String num = "-1";
     ScoreBoard score;
+    String mac;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -91,6 +94,24 @@ public class MyWorld extends World
         addObject(score, 750, 550);
         addObject(buttonA, 750, 610);
         addObject(buttonB, 920, 610);
+        
+        try{
+            Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
+            byte[] mac = null;
+            while(mac == null && networkInterfaces.hasMoreElements())
+            {
+                NetworkInterface network = networkInterfaces.nextElement();
+                System.out.println("network : " + network);
+                mac = network.getHardwareAddress();
+            }
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < mac.length; i++){
+                sb.append(String.format("%02X%s", mac[i],(i< mac.length - 1)?"-":""));
+            }
+            this.mac = sb.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public State getState() {
         return currentState;
@@ -122,5 +143,10 @@ public class MyWorld extends World
     public ScoreBoard getScoreboard()
     {
         return score;
+    }
+    
+    public String getMac()
+    {
+        return mac;
     }
 }

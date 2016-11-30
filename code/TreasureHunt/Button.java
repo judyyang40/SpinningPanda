@@ -3,9 +3,9 @@ import org.restlet.resource.*;
 import org.restlet.representation.*;
 import org.restlet.ext.json.*;
 import org.restlet.data.*;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
 import org.json.JSONObject;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 /**
  * Button class
@@ -73,19 +73,9 @@ public class Button extends Actor
         if(((MyWorld)getWorld()).getState().name.equals("Ready")) {//make requests to server and receive response
             
             JSONObject req = new JSONObject();
-            try{
-                InetAddress ip = InetAddress.getLocalHost();
-                NetworkInterface network = NetworkInterface.getByInetAddress(ip);
-                byte[] mac = network.getHardwareAddress();
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < mac.length; i++){
-                    sb.append(String.format("%02X%s", mac[i],(i< mac.length - 1)?"-":""));
-                }
-                req.put("mac", sb.toString());
-                //System.out.println(req.toString());
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+            req.put("mac", ((MyWorld)getWorld()).getMac());
+            
+            System.out.println("Join from button: " + req.get("mac"));
             
             ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/join");
             Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);

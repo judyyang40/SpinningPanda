@@ -31,21 +31,8 @@ public class ScoreBoard extends Actor
         if(((MyWorld)getWorld()).getState().name.equals("Playing"))
         {
             JSONObject req = new JSONObject();
-            try{
-                InetAddress ip = InetAddress.getLocalHost();
-                NetworkInterface network = NetworkInterface.getByInetAddress(ip);
-                byte[] mac = network.getHardwareAddress();
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < mac.length; i++){
-                    sb.append(String.format("%02X%s", mac[i],(i< mac.length - 1)?"-":""));
-                }
-                req.put("mac", sb.toString());
-                //System.out.println(req.toString());
-                Island curr = mw.getCurrentShip().getCurrentIsland();
-                req.put("location", curr.getName());
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+            req.put("mac", (mw.getMac());
+            
             ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/update");
             Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
             try {
