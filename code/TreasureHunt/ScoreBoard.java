@@ -5,7 +5,8 @@ import org.restlet.ext.json.*;
 import org.restlet.data.*;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
-import org.json.JSONObject;
+import org.json.*;
+import java.util.*;
 /**
  * Write a description of class ScoreBoard here.
  * 
@@ -14,8 +15,12 @@ import org.json.JSONObject;
  */
 public class ScoreBoard extends Actor
 {
-    MyWorld mw = (MyWorld)getWorld();
-    ScoreBoard sb = null;
+    MyWorld mw = null;
+    
+    public ScoreBoard()
+    {
+        mw = (MyWorld)getWorld();
+    }
     /**
      * Act - do whatever the ScoreBoard wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,7 +28,7 @@ public class ScoreBoard extends Actor
     public void act() 
     {
         
-        if(mw.getState().name.equals("Playing"))
+        if(((MyWorld)getWorld()).getState().name.equals("Playing"))
         {
             JSONObject req = new JSONObject();
             try{
@@ -41,7 +46,7 @@ public class ScoreBoard extends Actor
             } catch (Exception e) {
                 System.out.println(e);
             }
-            ClientResource client = new ClientResource("http://localhost:3000/update");
+            ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/update");
             Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
             try {
                 JSONObject msg = new JSONObject(result.getText());

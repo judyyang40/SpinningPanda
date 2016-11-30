@@ -87,7 +87,7 @@ public class Button extends Actor
                 System.out.println(e);
             }
             
-            ClientResource client = new ClientResource("http://localhost:3000/join");
+            ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/join");
             Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
             
             try {

@@ -15,7 +15,7 @@ public class MyWorld extends World
     Button buttonReady;
     State[] states = new State[4];
     State currentState;
-    String num = -1;
+    String num = "-1";
     ScoreBoard score;
     
     /**
@@ -64,7 +64,7 @@ public class MyWorld extends World
             islands[i] = new Island(islandName[i], fileName[i]);
             addObject(islands[i], x[i], y[i]);
         }
-
+    
         for (int i = 0; i < n; ++i) {
             Island dA = destA[i] == -1 ? null : islands[destA[i]];
             Island dB = destB[i] == -1 ? null : islands[destB[i]];
@@ -75,21 +75,22 @@ public class MyWorld extends World
         ship = new Ship(islands[2], "ship.JPG"); // All ships start from Pirate's Island
         
         addObject(ship, islands[2].getX(), islands[2].getY());
-
+    
         buttonA = new Button("a", 750, 610);
         buttonB = new Button("b", 920, 610);
         buttonReady = new Button("ready", 320, 280);
         score = new ScoreBoard();
+        
+        states[0] = new State("Init");
+        states[1] = new State("Ready");
+        states[2] = new State("Playing");
+        states[3] = new State("Finished");
+        setState(0);
+        
+        addObject(buttonReady, 520, 280);
         addObject(score, 750, 550);
         addObject(buttonA, 750, 610);
         addObject(buttonB, 920, 610);
-        addObject(buttonReady, 520, 280);
-        
-       states[0] = new State("Init");
-       states[1] = new State("Ready");
-       states[2] = new State("Playing");
-       states[3] = new State("Finished");
-       setState(0);
     }
     public State getState() {
         return currentState;
@@ -105,11 +106,11 @@ public class MyWorld extends World
     }
     
     public void fail() {
-        FinalActionCreator action = new FailActionCeator(this);
+        FinalActionCreator action = new FailActionCreator(this);
         action.exec(buttonA, buttonB);
     }
 
-    public setNum (String _num)
+    public void setNum (String _num)
     {
         this.num = _num;
     }
