@@ -13,7 +13,7 @@ public class Server {
 	
 	private State state;
 
-	public static final int player_max_num = 5; 
+	public static final int player_max_num = 2; 
 	public static final String initIsland = "Pirates’ Island";
 	public static final String treaIsland = "Treasure Island";
 	private JSONObject[] player;
@@ -71,9 +71,7 @@ public class Server {
 	{
 		JSONObject res = new JSONObject();
 		
-		System.out.println("request mac:" + mac);
 		res = state.request(mac);
-		System.out.println(res);
 		
 		return res;
 	}
@@ -82,9 +80,7 @@ public class Server {
 	{
         JSONObject res = new JSONObject();
 		
-		System.out.println("update mac:" + mac + "update location:" + location);
 		res = state.update(mac, location);
-		System.out.println(res);
 	    	
 		return res;
 	}
