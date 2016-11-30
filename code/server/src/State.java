@@ -15,5 +15,7 @@ public interface State {
 	public void timeOut();	
 	
 	public void entry();
+    
+    public void finish();
 
 }

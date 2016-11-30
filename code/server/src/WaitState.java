@@ -57,9 +57,11 @@ public class WaitState implements State {
 	
 	public void entry() 
 	{
-		// server.init();
-		// return; 
+		//server.init();
+		return; 
 	}
+    
+    public void finish() { return; }
 	
 	public String getName() { return this.name;}
 

@@ -69,4 +69,5 @@ public class PlayState implements State {
 	public void timeOut() { return; }
 	
 	public void entry() { return; }
+    public void finish() { return; }
 }

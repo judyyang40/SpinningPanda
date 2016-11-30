@@ -66,4 +66,9 @@ public class FinishState implements State {
 		timer = new Timer();
 		timer.schedule(new TimerOut(server), time);
 	}
+    
+    public void finish()
+    {
+        server.init();
+    }
 }

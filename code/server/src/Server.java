@@ -35,24 +35,21 @@ public class Server {
 	
 	public void init()
 	{
-		int i = 0;
+        int i = 0;
 		this.player_num = 0;
-		this.winner_No = 0;
-
+        this.winner_No = 0;
 		this.player =  new JSONObject[player_max_num];
 		Server.getInstance();
 		this.waitState = new WaitState("Wait State", serverInstance);
 		this.playState = new PlayState("Play State", serverInstance);
 		this.finishState = new FinishState("Finish State", serverInstance);
-		setState(waitState);
-		
-		for (i = 0; i < player_max_num; i++)
+        this.state = waitState;
+        for (i = 0; i < player_max_num; i++)
 		{
 			this.player[i] = new JSONObject();
-			this.player[i].put("mac", "");
+            this.player[i].put("mac", "");
 			this.player[i].put("location", "");
 		}
-		
 	}
 	
 	public String[] getAllLocation()
@@ -123,7 +120,7 @@ public class Server {
 	
 	public void setWinnerNo(int winner_No) 
 	{
-		if (winner_No >= player_max_num) { return; }
+		if (winner_No > player_max_num) { return; }
 		this.winner_No = winner_No;
 	}
 	
@@ -133,6 +130,7 @@ public class Server {
 	
 	public void setState(State state) 
 	{
+        this.state.finish();
 		state.entry();
 		this.state = state;
 	}
