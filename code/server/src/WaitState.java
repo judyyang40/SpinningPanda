@@ -21,29 +21,26 @@ public class WaitState implements State {
     	int player_No = server.getPlayer(mac);  // get the player No.
     	int player_num = server.getPlayerNum(); //get the number of players
     	JSONObject res = new JSONObject();
-    	
+    	System.out.println("WaitState request");
     	if (-1 == player_No)
     	{
     		player_No = server.addPlayer(mac);
     		player_num = server.getPlayerNum();
-            res.put("you", player_No);
-            res.put("total", player_num);
-            
-    		if (server.player_max_num == player_num)
-    		{
-    			res.put("status", "ready");
-    			server.setState(server.getPlayState());
-    		}
-    		else
-    		{
-    			res.put("status", "wait");
-    		}
+        }
+        
+        res.put("you", player_No);
+        res.put("total", player_num);
+        
+        if (server.player_max_num == player_num)
+        {
+            System.out.println("Ready");
+    		res.put("status", "ready");
+    		server.setState(server.getPlayState());
     	}
     	else
     	{
-    		res.put("status", "ready");
-			res.put("you", player_No);
-			res.put("total", player_num);
+            System.out.println("Wait");
+    		res.put("status", "wait");
     	}
     	
     	return res;
