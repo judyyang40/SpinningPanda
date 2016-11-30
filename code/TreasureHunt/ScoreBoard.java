@@ -27,7 +27,7 @@ public class ScoreBoard extends Actor
      */
     public void act() 
     {
-        
+        mw = (MyWorld)getWorld();
         if(((MyWorld)getWorld()).getState().name.equals("Playing"))
         {
             JSONObject req = new JSONObject();
