@@ -22,10 +22,6 @@ run:
 	echo Starting Service at:  http://localhost:8080
 	java -cp build:$(CP) api.IslandServer
 
-loadtest:
-	echo Starting Load Test on localhost
-	java -cp build:$(CP) RunLoadTest 5
-
 docker-build: app
 	docker build -t island .
 	docker images
