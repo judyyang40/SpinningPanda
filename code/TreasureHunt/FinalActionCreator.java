@@ -20,7 +20,7 @@ public abstract class FinalActionCreator
     {
         myWorld.removeObject(buttonA);
         myWorld.removeObject(buttonB);
-        getAction().ExtraAction(myWorld.getCurrentShip());
+        getAction().ExtraAction(((MyWorld)myWorld).getCurrentShip());
         Button button = new Button(getAction().getFinalResult(), 320, 280);
         myWorld.addObject(button, 520, 280);
         Greenfoot.delay(80);

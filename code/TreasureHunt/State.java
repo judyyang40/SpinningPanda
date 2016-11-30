@@ -1,7 +1,7 @@
 
 public class State 
 {
-   String name = "";
+   public String name = "";
    public State(String n) {
        name = n;
    }

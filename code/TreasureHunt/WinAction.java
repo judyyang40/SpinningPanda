@@ -1,9 +1,5 @@
-/**
- * Write a description of class WinAction here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;
+
 public class WinAction implements Action 
 {
     public String getFinalResult() {
