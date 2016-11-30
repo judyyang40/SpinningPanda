@@ -43,6 +43,7 @@ public class ScoreBoard extends Actor
                 //System.out.println(req.toString());
                 Island curr = mw.getCurrentShip().getCurrentIsland();
                 req.put("location", curr.getName());
+                System.out.println(req.toString());
             } catch (Exception e) {
                 System.out.println(e);
             }

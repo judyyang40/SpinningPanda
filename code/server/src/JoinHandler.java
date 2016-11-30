@@ -13,11 +13,10 @@ public class JoinHandler extends ServerResource {
     public Representation post(JsonRepresentation jsonRep) {
 
         JSONObject json = jsonRep.getJsonObject() ;
+        System.out.println("Join " + json) ;
         String mac = json.getString("mac") ;
-        System.out.println(json) ;
-
         JSONObject result = server.request(mac);
-        System.out.println(result);
+        System.out.println("return " + result);
 
         return new JsonRepresentation ( result ) ;
 
