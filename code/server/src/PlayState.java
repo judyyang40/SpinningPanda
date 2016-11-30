@@ -18,6 +18,7 @@ public class PlayState implements State {
 	public JSONObject request(String mac)
     {
 		int player_No = server.getPlayer(mac);  // get the player No.
+        int player_num = server.getPlayerNum(); //get the number of players
     	JSONObject res = new JSONObject();
     	
     	if (-1 == player_No)
@@ -26,9 +27,9 @@ public class PlayState implements State {
     	}
     	else
     	{
-    		res.put("finish", false);
-			res.put("you", player_No);
-			res.put("location", server.getAllLocation());
+    		res.put("you", player_No);
+            res.put("total", player_num);
+            res.put("status", "ready");
     	}
     	
     	return res;

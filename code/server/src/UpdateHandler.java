@@ -13,12 +13,13 @@ public class UpdateHandler extends ServerResource {
     public Representation post(JsonRepresentation jsonRep) {
 
         JSONObject json = jsonRep.getJsonObject() ;
+        System.out.println("update " + json) ;
         String mac = json.getString("mac") ;
         String location = json.getString("location");
-        System.out.println(json) ;
+        
 
         JSONObject result = server.update(mac, location);
-        System.out.println(result);
+        System.out.println("return " + result);
 
         return new JsonRepresentation ( result ) ;
 
