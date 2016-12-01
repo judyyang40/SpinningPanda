@@ -17,5 +17,7 @@ public interface State {
 	public void entry();
     
     public void finish();
+    
+    public String getName();
 
 }
