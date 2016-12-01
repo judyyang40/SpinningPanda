@@ -23,7 +23,7 @@ public abstract class FinalActionCreator
         getAction().ExtraAction(((MyWorld)myWorld).getCurrentShip());
         Button button = new Button(getAction().getFinalResult(), 320, 280);
         myWorld.addObject(button, 520, 280);
-        Greenfoot.delay(80);
+        Greenfoot.delay(300);
         Button buttonGameOver = new Button("gameover", 320, 280);
         myWorld.addObject(buttonGameOver, 520, 280);
     }    

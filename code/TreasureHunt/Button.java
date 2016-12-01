@@ -102,6 +102,6 @@ public class Button extends Actor
             } catch (Exception e) {
                 System.out.println(e);
             }
-        } 
+        }
     }
 }

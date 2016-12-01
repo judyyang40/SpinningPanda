@@ -53,7 +53,7 @@ public class ScoreBoard extends Actor
                         list.add(jsonArray.get(i).toString());
                         Actor playermsg = new Actor(){};
                         playermsg.setImage(new GreenfootImage("Player"+i+": " + list.get(i), 10, java.awt.Color.BLACK, java.awt.Color.WHITE));
-                        mw.addObject(playermsg, 800, 600 + 10*i);
+                        mw.addObject(playermsg, 700, 500 + 10*i);
                     } 
                 } 
             }else{
