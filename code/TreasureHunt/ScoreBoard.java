@@ -30,20 +30,20 @@ public class ScoreBoard extends Actor
         mw = (MyWorld)getWorld();
         if(((MyWorld)getWorld()).getState().name.equals("Playing"))
         {
-            JSONObject req = new JSONObject();
-            req.put("mac", mw.getMac());
+            if(mw.getObjects(Message.class).size() != 0)
+                mw.removeWaitMsg();
             
-            Island curr = mw.getCurrentShip().getCurrentIsland();
-            req.put("location", curr.getName());
-            //System.out.println(req.toString());
-            ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/update");
-            Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
+            JSONObject req = new JSONObject();
             try {
+                req.put("mac", mw.getMac());
+            
+                Island curr = mw.getCurrentShip().getCurrentIsland();
+                req.put("location", curr.getName());
+                //System.out.println(req.toString());
+                ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/update");
+                Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
+                
                 JSONObject msg = new JSONObject(result.getText());
-                /*msg.put("status", "ready");
-                msg.put("status", "wait");
-                msg.put("you", 2);
-                msg.put("total", 4);*/
                 if(!msg.get("finish").toString().equals("true")){
                 ArrayList<String> list = new ArrayList<String>();     
                 JSONArray jsonArray = (JSONArray)msg.get("location"); 
@@ -52,8 +52,9 @@ public class ScoreBoard extends Actor
                     for (int i=0;i<len;i++){ 
                         list.add(jsonArray.get(i).toString());
                         Actor playermsg = new Actor(){};
-                        playermsg.setImage(new GreenfootImage("Player"+i+": " + list.get(i), 10, java.awt.Color.BLACK, java.awt.Color.WHITE));
-                        mw.addObject(playermsg, 700, 500 + 10*i);
+                        int u = i+1;
+                        playermsg.setImage(new GreenfootImage("Player"+u+": " + list.get(i), 10, java.awt.Color.BLACK, java.awt.Color.WHITE));
+                        mw.addObject(playermsg, 700, 475 + 10*i);
                     } 
                 } 
             }else{

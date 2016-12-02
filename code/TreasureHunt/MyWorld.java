@@ -20,6 +20,7 @@ public class MyWorld extends World
     String num = "-1";
     ScoreBoard score;
     String mac;
+    Message waitmsg;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -83,6 +84,7 @@ public class MyWorld extends World
         buttonB = new Button("b", 920, 610);
         buttonReady = new Button("ready", 320, 280);
         score = new ScoreBoard();
+        waitmsg = new Message();
         
         states[0] = new State("Init");
         states[1] = new State("Ready");
@@ -148,5 +150,14 @@ public class MyWorld extends World
     public String getMac()
     {
         return mac;
+    }
+    
+    public void updateWaitMsg(int total) {
+        waitmsg.setImage(new GreenfootImage("Waiting... Number of Players: " + total, 25, java.awt.Color.BLACK, java.awt.Color.WHITE));
+        addObject(waitmsg, 800, 545);
+    }
+    
+    public void removeWaitMsg() {
+        removeObject(waitmsg);
     }
 }
