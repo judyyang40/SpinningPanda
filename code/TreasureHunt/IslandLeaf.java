@@ -5,14 +5,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author Judy Yang
  */
-public class Island extends Actor
+public class IslandLeaf extends Actor implements IIslandWorldComponent
 {
     private String name;
     private boolean hasTreasure = false;
-    private Island choiceA = null;
-    private Island choiceB = null;
+    private IslandLeaf choiceA = null;
+    private IslandLeaf choiceB = null;
     
-    public Island(String name, String filename) {
+    public IslandLeaf(String name, String filename) {
         this.name = name;
         setImage(filename);
     }
@@ -21,16 +21,16 @@ public class Island extends Actor
         return name;
     }
         
-    public void setDestinations(Island a, Island b) {
+    public void setDestinations(IslandLeaf a, IslandLeaf b) {
         choiceA = a;
         choiceB = b;
     }
     
-    public Island getA() {
+    public IslandLeaf getA() {
         return choiceA;
     }
     
-    public Island getB() {
+    public IslandLeaf getB() {
         return choiceB;
     }
     
@@ -43,9 +43,13 @@ public class Island extends Actor
         return hasTreasure;
     }
     
-    public void act() 
-    {
-        // Add your action code here.
-        //getImage().setTransparency(0);
-    } 
+    public void act() {} 
+    
+    public IIslandWorldComponent getChildIsland(int i){
+        return null;
+    }
+    
+    public void addChildIsland(IIslandWorldComponent c){}
+    
+    public void removeChildIsland(IIslandWorldComponent c){}
 }

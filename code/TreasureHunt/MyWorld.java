@@ -10,7 +10,8 @@ import java.util.Enumeration;
  */
 public class MyWorld extends World
 {
-    Island[] islands;
+    //Island[] islands;
+    IslandWorldComponent islandWorld;
     Ship ship;
     Button buttonA;
     Button buttonB;
@@ -62,23 +63,24 @@ public class MyWorld extends World
         int[] x = new int[]{150, 450, 185, 350, 550, 800, 800};
         int[] y = new int[]{100, 100, 330, 580, 380, 305, 100};
         
-        islands = new Island[7];
+        islandWorld = new IslandWorldComponent();
         final int n = 7;
         for (int i = 0; i < n; ++i) {
-            islands[i] = new Island(islandName[i], fileName[i]);
-            addObject(islands[i], x[i], y[i]);
+            IslandLeaf leaf = new IslandLeaf(islandName[i], fileName[i]);
+            islandWorld.addChildIsland(leaf);
+            addObject(leaf, x[i], y[i]);
         }
     
         for (int i = 0; i < n; ++i) {
-            Island dA = destA[i] == -1 ? null : islands[destA[i]];
-            Island dB = destB[i] == -1 ? null : islands[destB[i]];
-            islands[i].setDestinations(dA, dB);
+            IslandLeaf dA = destA[i] == -1 ? null : (IslandLeaf)islandWorld.getChildIsland(destA[i]);
+            IslandLeaf dB = destB[i] == -1 ? null : (IslandLeaf)islandWorld.getChildIsland(destB[i]);
+            islandWorld.getChildIsland(i).setDestinations(dA, dB);
         }
-        islands[n - 1].setTreasure();
+        islandWorld.getChildIsland(n-1).setTreasure();
         
-        ship = new Ship(islands[2], "ship.JPG"); // All ships start from Pirate's Island
+        ship = new Ship((IslandLeaf)islandWorld.getChildIsland(2), "ship.JPG"); // All ships start from Pirate's Island
         
-        addObject(ship, islands[2].getX(), islands[2].getY());
+        addObject(ship, 450, 100);
     
         buttonA = new Button("a", 750, 610);
         buttonB = new Button("b", 920, 610);

@@ -8,9 +8,9 @@ import greenfoot.*;
  */
 public class Ship extends Actor
 {
-    Island currentIsland;
+    IslandLeaf currentIsland;
     
-    public Ship(Island island, String filename) {
+    public Ship(IslandLeaf island, String filename) {
         currentIsland = island;        
         setLocation(currentIsland.getX(), currentIsland.getY());
         setImage(filename);
@@ -34,7 +34,7 @@ public class Ship extends Actor
         //}
     }
     
-    public void moveTo(Island island){
+    public void moveTo(IslandLeaf island){
         currentIsland = island;
         setLocation(currentIsland.getX(), currentIsland.getY());
         //if(currentIsland.isTreasure()){
@@ -42,7 +42,7 @@ public class Ship extends Actor
            //((MyWorld)getWorld()).win();
         //}
     }
-    public Island getCurrentIsland()
+    public IslandLeaf getCurrentIsland()
     {
         return currentIsland;
     }

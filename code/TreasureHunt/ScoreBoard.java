@@ -37,7 +37,7 @@ public class ScoreBoard extends Actor
             try {
                 req.put("mac", mw.getMac());
             
-                Island curr = mw.getCurrentShip().getCurrentIsland();
+                IslandLeaf curr = mw.getCurrentShip().getCurrentIsland();
                 req.put("location", curr.getName());
                 //System.out.println(req.toString());
                 ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/update");
