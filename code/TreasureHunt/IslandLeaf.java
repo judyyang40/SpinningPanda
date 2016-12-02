@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author Judy Yang
  */
-public class IslandLeaf extends Actor implements IIslandWorldComponent
+public class IslandLeaf extends Actor implements IslandWorldComponent
 {
     private String name;
     private boolean hasTreasure = false;
@@ -45,11 +45,11 @@ public class IslandLeaf extends Actor implements IIslandWorldComponent
     
     public void act() {} 
     
-    public IIslandWorldComponent getChildIsland(int i){
+    public IslandWorldComponent getChildIsland(int i){
         return null;
     }
     
-    public void addChildIsland(IIslandWorldComponent c){}
+    public void addChildIsland(IslandWorldComponent c){}
     
-    public void removeChildIsland(IIslandWorldComponent c){}
+    public void removeChildIsland(IslandWorldComponent c){}
 }

@@ -11,7 +11,7 @@ import java.util.Enumeration;
 public class MyWorld extends World
 {
     //Island[] islands;
-    IslandWorldComponent islandWorld;
+    IslandComposite islandWorld;
     Ship ship;
     Button buttonA;
     Button buttonB;
@@ -63,7 +63,7 @@ public class MyWorld extends World
         int[] x = new int[]{150, 450, 185, 350, 550, 800, 800};
         int[] y = new int[]{100, 100, 330, 580, 380, 305, 100};
         
-        islandWorld = new IslandWorldComponent();
+        islandWorld = new IslandComposite();
         final int n = 7;
         for (int i = 0; i < n; ++i) {
             IslandLeaf leaf = new IslandLeaf(islandName[i], fileName[i]);

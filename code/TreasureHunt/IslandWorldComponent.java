@@ -1,39 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
 
-public class IslandWorldComponent extends Actor implements IIslandWorldComponent 
+/**
+ * Interface for Islands
+ * 
+ * @author Judy Yang
+ */
+public interface IslandWorldComponent
 {
-    ArrayList<IIslandWorldComponent> islands = new ArrayList<IIslandWorldComponent>();
+    void addChildIsland(IslandWorldComponent c);
+    void removeChildIsland(IslandWorldComponent c);
+    IslandWorldComponent getChildIsland(int i);
     
-    public void addChildIsland(IIslandWorldComponent c){
-        islands.add(c);
-    }
-    
-    public void removeChildIsland(IIslandWorldComponent c){
-        islands.remove(c);
-    }
-    
-    public IIslandWorldComponent getChildIsland(int i) {
-        return islands.get(i);
-    }
-    
-    public String getName(){
-        return "IslandWorld";
-    }
-    
-    public void setDestinations(IslandLeaf a, IslandLeaf b){}
-    
-    public IslandLeaf getA(){
-        return null;
-    }
-    
-    public IslandLeaf getB(){
-        return null;
-    }
-    
-    public void setTreasure(){}
-    
-    public boolean isTreasure(){
-        return false;
-    }
+    public String getName();
+    public void setDestinations(IslandLeaf a, IslandLeaf b);
+    public IslandLeaf getA();
+    public IslandLeaf getB();
+    public void setTreasure();
+    public boolean isTreasure();
 }
