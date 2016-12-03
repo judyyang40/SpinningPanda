@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=FinalActionCreator
+comment0.text=\n\ Write\ a\ description\ of\ class\ FinalAction\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=w
+comment1.target=FinalActionCreator(greenfoot.World)
+comment2.params=
+comment2.target=Action\ getAction()
+comment3.params=buttonA\ buttonB
+comment3.target=void\ exec(Button,\ Button)
+numComments=4

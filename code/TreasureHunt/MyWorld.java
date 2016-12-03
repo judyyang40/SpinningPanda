@@ -134,6 +134,16 @@ public class MyWorld extends World
         FinalActionCreator action = new FailActionCreator(this);
         action.exec(buttonA, buttonB);
     }
+    
+    public void play()
+    {
+        new ConcretScore().playing(this);
+    }
+    
+    public void end() throws java.lang.Exception
+    {
+        new ConcretScore().end(this);
+    }
 
     public void setNum (String _num)
     {
