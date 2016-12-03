@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=AbstractScore
+comment1.params=w
+comment1.target=void\ playing(MyWorld)
+comment2.params=mw
+comment2.target=void\ end(MyWorld)
+comment3.params=
+comment3.target=org.restlet.representation.Representation\ getResult()
+comment4.params=r
+comment4.target=void\ setResult(org.restlet.representation.Representation)
+numComments=5

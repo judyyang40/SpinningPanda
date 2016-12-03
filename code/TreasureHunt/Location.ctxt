@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Location
+comment0.text=\n\ \n\ \n\ @Judy\ Yang\n
+comment1.params=x\ y
+comment1.target=Location(int,\ int)
+comment2.params=
+comment2.target=int\ getLocationX()
+comment3.params=
+comment3.target=int\ getLocationY()
+numComments=4
