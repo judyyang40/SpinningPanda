@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=Action
-comment0.text=\n\ Write\ a\ description\ of\ class\ Action\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=java.lang.String\ getFinalResult()
-comment2.params=s
-comment2.target=void\ ExtraAction(Ship)
-numComments=3
