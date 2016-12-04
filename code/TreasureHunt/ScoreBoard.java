@@ -35,13 +35,7 @@ public class ScoreBoard extends Actor
             
             //
             mw.play();
-            }else{
-                //
-                try{
-                mw.end();
-            }catch(java.lang.Exception e)
-            {}
-            }
+        }
           
     }    
 }

@@ -11,6 +11,8 @@ public class ConcretScore extends AbstractScore
 {
     public void playing(MyWorld mw)
     {
+        Representation result;
+        JSONObject msg;
         JSONObject req = new JSONObject();
             try {
                 req.put("mac", mw.getMac());
@@ -19,9 +21,8 @@ public class ConcretScore extends AbstractScore
                 req.put("location", curr.getName());
                 //System.out.println(req.toString());
                 ClientResource client = new ClientResource("http://island-c595ac2d.ee19226d.svc.dockerapp.io:3000/update");
-                Representation result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
-                super.setResult(result);
-                JSONObject msg = new JSONObject(result.getText());
+                result = client.post(new JsonRepresentation(req), MediaType.APPLICATION_JSON);
+                msg = new JSONObject(result.getText());
                 if(!msg.get("finish").toString().equals("true")){
                 ArrayList<String> list = new ArrayList<String>();     
                 JSONArray jsonArray = (JSONArray)msg.get("location"); 
@@ -35,6 +36,9 @@ public class ConcretScore extends AbstractScore
                         mw.addObject(playermsg, 700, 475 + 10*i);
                     } 
                 } 
+            }else{
+                System.out.println(result.toString());
+                end(mw, msg);
             }
         } catch (Exception e) {
                 System.out.println(e);

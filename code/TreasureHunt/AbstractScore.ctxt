@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=AbstractScore
+comment1.params=w
+comment1.target=void\ playing(MyWorld)
+comment2.params=mw\ msg
+comment2.target=void\ end(MyWorld,\ org.json.JSONObject)
+numComments=3
