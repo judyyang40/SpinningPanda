@@ -22,6 +22,7 @@ public class MyWorld extends World
     ScoreBoard score;
     String mac;
     Message waitmsg;
+    ConcretScore cs = new ConcretScore();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -137,12 +138,7 @@ public class MyWorld extends World
     
     public void play()
     {
-        new ConcretScore().playing(this);
-    }
-    
-    public void end() throws java.lang.Exception
-    {
-        new ConcretScore().end(this);
+        cs.playing(this);
     }
 
     public void setNum (String _num)
