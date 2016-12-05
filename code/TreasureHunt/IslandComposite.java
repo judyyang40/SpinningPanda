@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class IslandComposite extends Actor implements IslandWorldComponent 
 {
-    ArrayList<IslandWorldComponent> islands = new ArrayList<IslandWorldComponent>();
+    private ArrayList<IslandWorldComponent> islands = new ArrayList<IslandWorldComponent>();
     
     public void addChildIsland(IslandWorldComponent c){
         islands.add(c);
